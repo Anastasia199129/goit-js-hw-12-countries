@@ -21,27 +21,26 @@ input.addEventListener('input', onInputInput);
 
 function onInputInput(event) {
   event.preventDefault();
-  const name = input.value;
+  const inputValue = input.value;
 
-  if (name.length === 0) {
+  if (inputValue.length === 0) {
     list.innerHTML = '';
     wrapper.innerHTML = '';
   }
 
-  console.log(name);
-  receiveCountries(name)
+  //   console.log(inputValue);
+  receiveCountries(inputValue)
     .then(debounce(renderCountrys, 500))
     .catch(error => console.log(error));
 }
 
 function renderCountrys(arrayCountrys) {
-  console.log(arrayCountrys);
+  //   console.log(arrayCountrys);
   let listCountrys = listTpl(arrayCountrys);
   let markupCardCountri = cardCountri(arrayCountrys);
   if (arrayCountrys.length === 1) {
     list.innerHTML = '';
     wrapper.innerHTML = markupCardCountri;
-    console.log(markupCardCountri);
   }
   if (arrayCountrys.length <= 10 && arrayCountrys.length >= 2) {
     wrapper.innerHTML = '';
