@@ -1,15 +1,17 @@
 {{#each this}}
 <hi class="name-countri">{{name}}</hi>
 <div class="wrapper-countri">
-<img class="img" src="{{flag}}" alt="{{name}}">
-<ul>
-    <li><span class="span">Capital:</span> {{capital}}</li>
-    <li><span class="span">Population: </span>{{population}}</li>
+<div class="wrappet-information-countri">
+    <ul class="list">
+    <li class="list-item list-item-capital"><span class=" bold">Capital:</span> {{capital}}</li>
+    <li class="list-item"><span class=" bold">Population: </span>{{population}}</li>
 </ul>
-<ul>Languages:
+<p class="title-languages bold">Languages:</p>
+<ul class="list-languages">
     {{#each languages}}
     <li>{{name}}</li>
     {{/each}}
-    </ul>
+</ul></div>
+    <div class="wrapper-img"><img class="img" src="{{flag}}" alt="{{name}}"></div>
     </div>
 {{/each}}

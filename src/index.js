@@ -21,9 +21,12 @@ input.addEventListener('input', onInputInput);
 
 function onInputInput(event) {
   event.preventDefault();
-
-  console.log(event.currentTarget);
   const name = input.value;
+
+  if (name.length === 0) {
+    list.innerHTML = '';
+    wrapper.innerHTML = '';
+  }
 
   console.log(name);
   receiveCountries(name)
@@ -41,9 +44,11 @@ function renderCountrys(arrayCountrys) {
     console.log(markupCardCountri);
   }
   if (arrayCountrys.length <= 10 && arrayCountrys.length >= 2) {
+    wrapper.innerHTML = '';
     list.innerHTML = listCountrys;
   }
   if (arrayCountrys.length > 10) {
+    list.innerHTML = '';
     alert({
       type: 'error',
       text: 'Too many matches found. Please enter a more specific Query!',
