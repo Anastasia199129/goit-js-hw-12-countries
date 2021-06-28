@@ -27,11 +27,11 @@ function onInputInput(event) {
     list.innerHTML = '';
     wrapper.innerHTML = '';
   }
-
-  //   console.log(inputValue);
-  receiveCountries(inputValue)
-    .then(debounce(renderCountrys, 500))
-    .catch(error => console.log(error));
+  if (inputValue.length > 0) {
+    receiveCountries(inputValue)
+      .then(debounce(renderCountrys, 500))
+      .catch(error => console.log(error));
+  }
 }
 
 function renderCountrys(arrayCountrys) {
