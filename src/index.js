@@ -23,6 +23,15 @@ function onInputInput(event) {
   event.preventDefault();
   const inputValue = input.value;
 
+  if (inputValue !== String && inputValue > 0) {
+    alert({
+      type: 'error',
+      text: 'Incorrect input!',
+      closerHover: true,
+      delay: 500,
+    });
+  }
+
   if (inputValue.length === 0) {
     list.innerHTML = '';
     wrapper.innerHTML = '';
